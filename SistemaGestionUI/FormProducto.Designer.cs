@@ -62,7 +62,7 @@
             txtId.Location = new Point(121, 18);
             txtId.Name = "txtId";
             txtId.Size = new Size(108, 27);
-            txtId.TabIndex = 1;
+            txtId.TabIndex = 0;
             // 
             // txtDescripcion
             // 
@@ -71,7 +71,7 @@
             txtDescripcion.Location = new Point(121, 52);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(369, 27);
-            txtDescripcion.TabIndex = 3;
+            txtDescripcion.TabIndex = 1;
             // 
             // label2
             // 
@@ -100,7 +100,7 @@
             txtCosto.Location = new Point(121, 85);
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(108, 27);
-            txtCosto.TabIndex = 3;
+            txtCosto.TabIndex = 2;
             // 
             // label4
             // 
@@ -138,7 +138,7 @@
             txtStock.Location = new Point(121, 118);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(108, 27);
-            txtStock.TabIndex = 3;
+            txtStock.TabIndex = 4;
             // 
             // label6
             // 
@@ -157,7 +157,7 @@
             txtIdUsuario.Location = new Point(382, 118);
             txtIdUsuario.Name = "txtIdUsuario";
             txtIdUsuario.Size = new Size(108, 27);
-            txtIdUsuario.TabIndex = 3;
+            txtIdUsuario.TabIndex = 5;
             // 
             // btnVolver
             // 
@@ -166,7 +166,7 @@
             btnVolver.Location = new Point(121, 174);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(108, 35);
-            btnVolver.TabIndex = 4;
+            btnVolver.TabIndex = 6;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
@@ -178,7 +178,7 @@
             btnAceptar.Location = new Point(382, 174);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(108, 35);
-            btnAceptar.TabIndex = 5;
+            btnAceptar.TabIndex = 7;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;

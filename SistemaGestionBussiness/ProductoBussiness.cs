@@ -10,6 +10,11 @@ namespace SistemaGestionBussiness
 {
     public class ProductoBussiness
     {
+        public static List<Producto> ListarProductos()
+        {
+            return ProductoData.ListarProductos();
+        }
+
         public static void CrearProducto(Producto p)
         {
             ProductoData.CrearProducto(p);
@@ -18,11 +23,6 @@ namespace SistemaGestionBussiness
         public static void ModificarProducto(Producto p)
         {
             ProductoData.ModificarProducto(p);
-        }
-
-        public static List<Producto> ListarProductos()
-        {
-            return ProductoData.ListarProductos();
         }
 
         public static Producto ObtenerProducto(int Id)
@@ -35,14 +35,5 @@ namespace SistemaGestionBussiness
             ProductoData.EliminarProductoId(id);
         }
 
-        public static void EliminarUsuarioId(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static void EliminarVentaId(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

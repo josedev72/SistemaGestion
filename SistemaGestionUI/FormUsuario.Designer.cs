@@ -51,7 +51,7 @@
             btnAceptar.Location = new Point(382, 237);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(108, 35);
-            btnAceptar.TabIndex = 19;
+            btnAceptar.TabIndex = 7;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             // 
@@ -62,7 +62,7 @@
             btnVolver.Location = new Point(144, 237);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(108, 35);
-            btnVolver.TabIndex = 18;
+            btnVolver.TabIndex = 6;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
@@ -74,7 +74,7 @@
             txtIdUsuario.Location = new Point(144, 185);
             txtIdUsuario.Name = "txtIdUsuario";
             txtIdUsuario.Size = new Size(108, 27);
-            txtIdUsuario.TabIndex = 13;
+            txtIdUsuario.TabIndex = 5;
             // 
             // label6
             // 
@@ -93,7 +93,7 @@
             txtStock.Location = new Point(144, 152);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(108, 27);
-            txtStock.TabIndex = 14;
+            txtStock.TabIndex = 4;
             // 
             // label5
             // 
@@ -112,7 +112,7 @@
             txtPrecioVenta.Location = new Point(144, 117);
             txtPrecioVenta.Name = "txtPrecioVenta";
             txtPrecioVenta.Size = new Size(108, 27);
-            txtPrecioVenta.TabIndex = 15;
+            txtPrecioVenta.TabIndex = 3;
             // 
             // label4
             // 
@@ -131,7 +131,7 @@
             txtCosto.Location = new Point(144, 84);
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(108, 27);
-            txtCosto.TabIndex = 16;
+            txtCosto.TabIndex = 2;
             // 
             // label3
             // 
@@ -150,7 +150,7 @@
             txtDescripcion.Location = new Point(144, 51);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(369, 27);
-            txtDescripcion.TabIndex = 17;
+            txtDescripcion.TabIndex = 1;
             // 
             // label2
             // 
@@ -170,7 +170,7 @@
             txtId.Location = new Point(144, 18);
             txtId.Name = "txtId";
             txtId.Size = new Size(108, 27);
-            txtId.TabIndex = 7;
+            txtId.TabIndex = 0;
             // 
             // label1
             // 

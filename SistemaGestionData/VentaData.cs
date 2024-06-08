@@ -145,7 +145,7 @@ namespace SistemaGestionData
         }
 
         //EliminarVenta
-        public static void EliminarVenta(int Id)
+        public static void EliminarVentaId(int Id)
         {
             try
             {

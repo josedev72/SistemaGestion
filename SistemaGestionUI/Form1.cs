@@ -214,17 +214,17 @@ namespace SistemaGestionUI
                         break;
 
                     case "ProductoVendido":
-                        ProductoBussiness.EliminarProductoId(this.Id);
+                        ProductoVendidoBussiness.EliminarProductoVendidoId(this.Id);
                         cargoProductosVendidos();
                         break;
 
                     case "Usuario":
-                        ProductoBussiness.EliminarUsuarioId(this.Id);
+                        UsuarioBussiness.EliminarUsuarioId(this.Id);
                         cargoUsuarios();
                         break;
 
                     case "Venta":
-                        ProductoBussiness.EliminarVentaId(this.Id);
+                        VentaBussiness.EliminarVentaId(this.Id);
                         cargoVentas();
                         break;
 

@@ -45,7 +45,7 @@
             btnAceptar.Location = new Point(274, 135);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(108, 35);
-            btnAceptar.TabIndex = 29;
+            btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             // 
@@ -56,7 +56,7 @@
             btnVolver.Location = new Point(121, 135);
             btnVolver.Name = "btnVolver";
             btnVolver.Size = new Size(108, 35);
-            btnVolver.TabIndex = 28;
+            btnVolver.TabIndex = 3;
             btnVolver.Text = "Volver";
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
@@ -68,7 +68,7 @@
             txtCosto.Location = new Point(121, 84);
             txtCosto.Name = "txtCosto";
             txtCosto.Size = new Size(108, 27);
-            txtCosto.TabIndex = 26;
+            txtCosto.TabIndex = 2;
             // 
             // label3
             // 
@@ -87,7 +87,7 @@
             txtDescripcion.Location = new Point(121, 51);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.Size = new Size(167, 27);
-            txtDescripcion.TabIndex = 27;
+            txtDescripcion.TabIndex = 1;
             // 
             // label2
             // 
@@ -107,7 +107,7 @@
             txtId.Location = new Point(121, 18);
             txtId.Name = "txtId";
             txtId.Size = new Size(108, 27);
-            txtId.TabIndex = 21;
+            txtId.TabIndex = 0;
             // 
             // label1
             // 

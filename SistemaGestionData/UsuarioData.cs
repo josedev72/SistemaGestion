@@ -151,7 +151,7 @@ namespace SistemaGestionData
         }
 
         //EliminarUsuario
-        public static void EliminarUsuario(int Id)
+        public static void EliminarUsuarioId(int Id)
         {
             try
             {
