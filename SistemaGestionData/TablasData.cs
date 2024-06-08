@@ -7,10 +7,10 @@ namespace SistemaGestionData
     {
         private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
 
+        // Obtener tablas de mi bbdd
         public static List<string> GetTablas()
         {
             List<string> listaTablas = new List<string>();
-            //.... Código
 
             try
             {
@@ -33,6 +33,7 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 listaTablas = new List<string>();
+                Console.WriteLine("Error al cargar listado de tablas");
             }
 
             return listaTablas;

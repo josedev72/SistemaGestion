@@ -16,7 +16,6 @@ namespace SistemaGestionData
         public static Usuario ObtenerUsuario(int id)
         {
             Usuario usuarioEncontrado = new Usuario();
-            //.... Código
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
@@ -45,6 +44,7 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 usuarioEncontrado = new Usuario();
+                Console.WriteLine("Error al obtener usuario x id");
             }
 
             return usuarioEncontrado;
@@ -54,7 +54,6 @@ namespace SistemaGestionData
         public static List<Usuario> ListarUsuarios()
         {
             List<Usuario> lista = new List<Usuario>();
-            //.... Código
 
             try
             {
@@ -86,6 +85,7 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 lista = new List<Usuario>();
+                Console.WriteLine("Error al cargar listado");
             }
 
             return lista;
@@ -116,7 +116,7 @@ namespace SistemaGestionData
             }
             catch (Exception)
             {
-                throw;
+                Console.WriteLine("Error al crear usuario");
             }
         }
 
@@ -146,7 +146,6 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al modificar usuario");
-                throw;
             }
         }
 
@@ -171,10 +170,7 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al eliminar usuario");
-                throw;
             }
         }
-
-
     }
 }

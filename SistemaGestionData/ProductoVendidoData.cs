@@ -12,20 +12,17 @@ namespace SistemaGestionData
     {
         private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
 
-
-        //ObtenerProductoVendido
+        //Obtener ProductoVendido x id
         public static ProductoVendido ObtenerProductoVendido(int id)
         {
             ProductoVendido ProductoVendidoEncontrado = new ProductoVendido();
-            //.... Código
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    connection.Open();
-                    // SELECT Id,IdProducto,Stock,IdVenta FROM ProductoVendido
-
                     string query = "SELECT Id,IdProducto,Stock,IdVenta FROM ProductoVendido WHERE Id = @id";
+                    
+                    connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
 
                     command.Parameters.AddWithValue("@Id", id);
@@ -45,12 +42,13 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 ProductoVendidoEncontrado = new ProductoVendido();
+                Console.WriteLine("Error al obtener producto");
             }
 
             return ProductoVendidoEncontrado;
         }
 
-        //ListarProductoVendidos
+        //Listar ProductoVendidos
         public static List<ProductoVendido> ListarProductosVendidos()
         {
             List<ProductoVendido> lista = new List<ProductoVendido>();
@@ -83,19 +81,19 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 lista = new List<ProductoVendido>();
+                Console.WriteLine("Error al cargar listado");
             }
 
             return lista;
         }
 
-        //CrearProductoVendido
+        //Crear ProductoVendido
         public static void CrearProductoVendido(ProductoVendido ProductoVendido)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    //SELECT Id, IdProducto, Stock, IdVenta FROM ProductoVendido
                     string query = "INSERT INTO ProductoVendido (IdProducto, Stock, IdVenta) " +
                                    "VALUES (@IdProducto, @Stock, @IdVenta)";
 
@@ -112,7 +110,7 @@ namespace SistemaGestionData
             }
             catch (Exception)
             {
-                throw;
+                Console.WriteLine("Error al crear producto vendido");
             }
         }
 
@@ -123,7 +121,6 @@ namespace SistemaGestionData
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    //SELECT Id, IdProducto, Stock, IdVenta FROM ProductoVendido
                     string query = "Update ProductoVendido Set IdProducto = @IdProducto, Stock=@Stock, IdVenta=@IdVenta Where Id=@Id";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -141,7 +138,6 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al modificar ProductoVendido");
-                throw;
             }
         }
 
@@ -166,7 +162,6 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al eliminar ProductoVendido");
-                throw;
             }
         }
     }

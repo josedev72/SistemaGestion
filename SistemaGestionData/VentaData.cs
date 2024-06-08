@@ -12,19 +12,17 @@ namespace SistemaGestionData
     {
         private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
 
-        //ObtenerVenta
+        //Obtener Venta
         public static Venta ObtenerVenta(int id)
         {
             Venta VentaEncontrado = new Venta();
-            //.... Código
             try
             {
                 using (var connection = new SqlConnection(_connectionString))
                 {
-                    connection.Open();
-                    // SELECT Id,Comentarios,IdUsuario FROM Venta
-
                     string query = "SELECT Id, Comentarios, IdUsuario FROM Venta WHERE Id = @id";
+                    
+                    connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
 
                     command.Parameters.AddWithValue("Id", id);
@@ -38,7 +36,6 @@ namespace SistemaGestionData
                             VentaEncontrado.Id = Convert.ToInt32(reader["Id"]);
                             VentaEncontrado.Comentarios = reader["Comentarios"].ToString();
                             VentaEncontrado.IdUsuario = Convert.ToInt32(reader["IdUsuario"].ToString());
-
                         }
                     }
                 }
@@ -46,24 +43,24 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 VentaEncontrado = new Venta();
+                Console.WriteLine("Error al obtener venta");
             }
 
             return VentaEncontrado;
         }
 
-        //ListarVentas
+        //Listar Ventas
         public static List<Venta> ListarVentas()
         {
             List<Venta> lista = new List<Venta>();
-            //.... Código
 
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    connection.Open();
-
                     string query = "SELECT Id,Comentarios,IdUsuario FROM Venta";
+
+                    connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
 
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -84,19 +81,19 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 lista = new List<Venta>();
+                Console.WriteLine("Error al cargar listado de ventas");
             }
 
             return lista;
         }
 
-        //CrearVenta
+        //Crear Venta
         public static void CrearVenta(Venta Venta)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    //SELECT Id,Comentarios,IdUsuario FROM Venta
                     string query = "INSERT INTO Venta (Comentarios,IdUsuario) " +
                                    "VALUES (@Comentarios, @IdUsuario)";
 
@@ -112,18 +109,17 @@ namespace SistemaGestionData
             }
             catch (Exception)
             {
-                throw;
+                Console.WriteLine("Error al crear venta");
             }
         }
 
-        //ModificarVenta
+        //Modificar Venta
         public static void ModificarVenta(Venta ventaEditar)
         {
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    //SELECT Id,Comentarios,IdUsuario FROM Venta
                     string query = "Update Venta Set Comentarios = @Comentarios, IdUsuario=@IdUsuario Where Id=@Id";
 
                     using (SqlCommand command = new SqlCommand(query, connection))
@@ -140,11 +136,10 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al modificar Venta");
-                throw;
             }
         }
 
-        //EliminarVenta
+        //Eliminar Venta
         public static void EliminarVentaId(int Id)
         {
             try
@@ -165,7 +160,6 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al eliminar Venta");
-                throw;
             }
         }
     }

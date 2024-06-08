@@ -9,23 +9,19 @@ namespace SistemaGestionData
 {
     public class ProductoData
     {
-        
-
         private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
 
-        //ObtenerProducto
+        //ObtenerProducto x id
         public static Producto ObtenerProducto(int id)
         {
             Producto ProductoEncontrado = new Producto();
-            //.... Código
             try
             {
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    connection.Open();
-                    //SELECT Id,Descripcion,Costo,PrecioVenta,Stock,IdUsuario FROM Producto
-
                     string query = "SELECT Id,Descripcion,Costo,PrecioVenta,Stock,IdUsuario FROM Producto WHERE Id = @id";
+                    
+                    connection.Open();
                     SqlCommand command = new SqlCommand(query, connection);
 
                     command.Parameters.AddWithValue("Id", id);
@@ -56,7 +52,6 @@ namespace SistemaGestionData
         public static List<Producto> ListarProductos()
         {
             List<Producto> lista = new List<Producto>();
-            //.... Código
 
             try
             {
@@ -88,6 +83,7 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 lista = new List<Producto>();
+                Console.WriteLine("Error al cargar listado");
             }
 
             return lista;
@@ -118,7 +114,7 @@ namespace SistemaGestionData
             }
             catch (Exception)
             {
-                throw;
+                Console.WriteLine("Error al crear producto");
             }
         }
 
@@ -148,7 +144,6 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al modificar Producto");
-                throw;
             }
         }
 
@@ -173,10 +168,7 @@ namespace SistemaGestionData
             catch (Exception)
             {
                 Console.WriteLine("Error al eliminar Producto");
-                throw;
             }
         }
-
-        
     }
 }
