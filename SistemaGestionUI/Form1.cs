@@ -1,5 +1,6 @@
 using SistemaGestionBussiness;
 using SistemaGestionData;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SistemaGestionUI
@@ -48,6 +49,28 @@ namespace SistemaGestionUI
             cargarTablas();
 
             cargoProductos();
+
+            FormatearDgvDatos();
+        }
+
+        private void FormatearDgvDatos()
+        {
+            // Encabezado
+            dgvDatos.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvDatos.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+
+            // Autoajustar ancho de columna
+            dgvDatos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            
+            // Asignar el estilo de celda para todo el DataGridView
+            dgvDatos.DefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+
+            //Barra
+            dgvDatos.ScrollBars = ScrollBars.Vertical;
+
+            // +/- filas
+            dgvDatos.AllowUserToAddRows = false;
+            dgvDatos.AllowUserToDeleteRows = false;
         }
 
         private void cmbTablas_SelectedIndexChanged(object sender, EventArgs e)
