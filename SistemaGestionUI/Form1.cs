@@ -158,14 +158,9 @@ namespace SistemaGestionUI
             }
         }
 
-        private void FormVenta_FormClosed(object? sender, FormClosedEventArgs e)
+        private void FormProducto_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            TraerTabla("Venta");
-        }
-
-        private void FormUsuario_FormClosed(object? sender, FormClosedEventArgs e)
-        {
-            TraerTabla("Usuario");
+            TraerTabla("Producto");
         }
 
         private void FormProductoVendido_FormClosed(object? sender, FormClosedEventArgs e)
@@ -173,9 +168,14 @@ namespace SistemaGestionUI
             TraerTabla("ProductoVendido");
         }
 
-        private void FormProducto_FormClosed(object? sender, FormClosedEventArgs e)
+        private void FormUsuario_FormClosed(object? sender, FormClosedEventArgs e)
         {
-            TraerTabla("Producto");
+            TraerTabla("Usuario");
+        }
+
+        private void FormVenta_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            TraerTabla("Venta");
         }
 
         private void TraerTabla(string nombreTabla)
@@ -227,19 +227,24 @@ namespace SistemaGestionUI
 
                 case "ProductoVendido":
                     FormProductoVendido formProductoVendido = new FormProductoVendido(id);
+                    formProductoVendido.FormClosed += FormProductoVendido_FormClosed;
                     formProductoVendido.ShowDialog();
                     break;
 
                 case "Usuario":
                     FormUsuario formUsuario = new FormUsuario(id);
+                    formUsuario.FormClosed += FormUsuario_FormClosed;
                     formUsuario.ShowDialog();
                     break;
 
                 case "Venta":
                     FormVenta formVenta = new FormVenta(id);
+                    formVenta.FormClosed += FormVenta_FormClosed;
                     formVenta.ShowDialog();
                     break;
+
                 default:
+                    Console.WriteLine("Tabla no encontrada");
                     break;
             }
         }
