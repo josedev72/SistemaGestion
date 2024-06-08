@@ -1,5 +1,6 @@
 using SistemaGestionBussiness;
 using SistemaGestionData;
+using System.Data.Common;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -71,6 +72,22 @@ namespace SistemaGestionUI
             // +/- filas
             dgvDatos.AllowUserToAddRows = false;
             dgvDatos.AllowUserToDeleteRows = false;
+
+            // Alinear a derecha si es N° y ocultar si es "Contrasenia"
+            foreach (DataGridViewColumn columna in dgvDatos.Columns)
+            {
+                // Alinear
+                if (columna.ValueType == typeof(int) || columna.ValueType == typeof(decimal) || columna.ValueType == typeof(double))
+                {
+                    columna.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+                }
+
+                // Ver si encabezado es "Contrasenia"
+                if (columna.HeaderText.Equals("Contrasenia"))
+                {
+                    columna.Visible = false;
+                }
+            }
         }
 
         private void cmbTablas_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +116,8 @@ namespace SistemaGestionUI
                 default:
                     break;
             }
+
+            FormatearDgvDatos();
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

@@ -30,9 +30,9 @@
         {
             btnAceptar = new Button();
             btnVolver = new Button();
-            txtCosto = new TextBox();
+            txtIdUsuario = new TextBox();
             label3 = new Label();
-            txtDescripcion = new TextBox();
+            txtComentarios = new TextBox();
             label2 = new Label();
             txtId = new TextBox();
             label1 = new Label();
@@ -48,6 +48,7 @@
             btnAceptar.TabIndex = 4;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnVolver
             // 
@@ -61,14 +62,14 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // txtCosto
+            // txtIdUsuario
             // 
-            txtCosto.BorderStyle = BorderStyle.FixedSingle;
-            txtCosto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCosto.Location = new Point(121, 84);
-            txtCosto.Name = "txtCosto";
-            txtCosto.Size = new Size(108, 27);
-            txtCosto.TabIndex = 2;
+            txtIdUsuario.BorderStyle = BorderStyle.FixedSingle;
+            txtIdUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIdUsuario.Location = new Point(121, 84);
+            txtIdUsuario.Name = "txtIdUsuario";
+            txtIdUsuario.Size = new Size(108, 27);
+            txtIdUsuario.TabIndex = 2;
             // 
             // label3
             // 
@@ -80,14 +81,14 @@
             label3.TabIndex = 23;
             label3.Text = "Id. Usuario";
             // 
-            // txtDescripcion
+            // txtComentarios
             // 
-            txtDescripcion.BorderStyle = BorderStyle.FixedSingle;
-            txtDescripcion.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDescripcion.Location = new Point(121, 51);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(167, 27);
-            txtDescripcion.TabIndex = 1;
+            txtComentarios.BorderStyle = BorderStyle.FixedSingle;
+            txtComentarios.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtComentarios.Location = new Point(121, 51);
+            txtComentarios.Name = "txtComentarios";
+            txtComentarios.Size = new Size(167, 27);
+            txtComentarios.TabIndex = 1;
             // 
             // label2
             // 
@@ -126,15 +127,16 @@
             ClientSize = new Size(409, 199);
             Controls.Add(btnAceptar);
             Controls.Add(btnVolver);
-            Controls.Add(txtCosto);
+            Controls.Add(txtIdUsuario);
             Controls.Add(label3);
-            Controls.Add(txtDescripcion);
+            Controls.Add(txtComentarios);
             Controls.Add(label2);
             Controls.Add(txtId);
             Controls.Add(label1);
             Name = "FormVenta";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormVenta";
+            Load += FormVenta_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -143,9 +145,9 @@
 
         private Button btnAceptar;
         private Button btnVolver;
-        private TextBox txtCosto;
+        private TextBox txtIdUsuario;
         private Label label3;
-        private TextBox txtDescripcion;
+        private TextBox txtComentarios;
         private Label label2;
         private TextBox txtId;
         private Label label1;

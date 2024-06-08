@@ -30,15 +30,15 @@
         {
             btnAceptar = new Button();
             btnVolver = new Button();
-            txtIdUsuario = new TextBox();
+            txtMail = new TextBox();
             label6 = new Label();
-            txtStock = new TextBox();
+            txtContrasenia = new TextBox();
             label5 = new Label();
-            txtPrecioVenta = new TextBox();
+            txtNombreUsuario = new TextBox();
             label4 = new Label();
-            txtCosto = new TextBox();
+            txtApellido = new TextBox();
             label3 = new Label();
-            txtDescripcion = new TextBox();
+            txtNombre = new TextBox();
             label2 = new Label();
             txtId = new TextBox();
             label1 = new Label();
@@ -54,6 +54,7 @@
             btnAceptar.TabIndex = 7;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnVolver
             // 
@@ -67,14 +68,14 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // txtIdUsuario
+            // txtMail
             // 
-            txtIdUsuario.BorderStyle = BorderStyle.FixedSingle;
-            txtIdUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtIdUsuario.Location = new Point(144, 185);
-            txtIdUsuario.Name = "txtIdUsuario";
-            txtIdUsuario.Size = new Size(108, 27);
-            txtIdUsuario.TabIndex = 5;
+            txtMail.BorderStyle = BorderStyle.FixedSingle;
+            txtMail.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtMail.Location = new Point(144, 185);
+            txtMail.Name = "txtMail";
+            txtMail.Size = new Size(108, 27);
+            txtMail.TabIndex = 5;
             // 
             // label6
             // 
@@ -86,14 +87,15 @@
             label6.TabIndex = 8;
             label6.Text = "Mail";
             // 
-            // txtStock
+            // txtContrasenia
             // 
-            txtStock.BorderStyle = BorderStyle.FixedSingle;
-            txtStock.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtStock.Location = new Point(144, 152);
-            txtStock.Name = "txtStock";
-            txtStock.Size = new Size(108, 27);
-            txtStock.TabIndex = 4;
+            txtContrasenia.BorderStyle = BorderStyle.FixedSingle;
+            txtContrasenia.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtContrasenia.Location = new Point(144, 152);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(108, 27);
+            txtContrasenia.TabIndex = 4;
             // 
             // label5
             // 
@@ -105,14 +107,14 @@
             label5.TabIndex = 9;
             label5.Text = "Contraseña";
             // 
-            // txtPrecioVenta
+            // txtNombreUsuario
             // 
-            txtPrecioVenta.BorderStyle = BorderStyle.FixedSingle;
-            txtPrecioVenta.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPrecioVenta.Location = new Point(144, 117);
-            txtPrecioVenta.Name = "txtPrecioVenta";
-            txtPrecioVenta.Size = new Size(108, 27);
-            txtPrecioVenta.TabIndex = 3;
+            txtNombreUsuario.BorderStyle = BorderStyle.FixedSingle;
+            txtNombreUsuario.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombreUsuario.Location = new Point(144, 117);
+            txtNombreUsuario.Name = "txtNombreUsuario";
+            txtNombreUsuario.Size = new Size(108, 27);
+            txtNombreUsuario.TabIndex = 3;
             // 
             // label4
             // 
@@ -124,14 +126,14 @@
             label4.TabIndex = 10;
             label4.Text = "Nombre Usuario";
             // 
-            // txtCosto
+            // txtApellido
             // 
-            txtCosto.BorderStyle = BorderStyle.FixedSingle;
-            txtCosto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCosto.Location = new Point(144, 84);
-            txtCosto.Name = "txtCosto";
-            txtCosto.Size = new Size(108, 27);
-            txtCosto.TabIndex = 2;
+            txtApellido.BorderStyle = BorderStyle.FixedSingle;
+            txtApellido.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtApellido.Location = new Point(144, 84);
+            txtApellido.Name = "txtApellido";
+            txtApellido.Size = new Size(108, 27);
+            txtApellido.TabIndex = 2;
             // 
             // label3
             // 
@@ -143,14 +145,14 @@
             label3.TabIndex = 11;
             label3.Text = "Apellido";
             // 
-            // txtDescripcion
+            // txtNombre
             // 
-            txtDescripcion.BorderStyle = BorderStyle.FixedSingle;
-            txtDescripcion.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDescripcion.Location = new Point(144, 51);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(369, 27);
-            txtDescripcion.TabIndex = 1;
+            txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNombre.Location = new Point(144, 51);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(369, 27);
+            txtNombre.TabIndex = 1;
             // 
             // label2
             // 
@@ -189,21 +191,22 @@
             ClientSize = new Size(531, 297);
             Controls.Add(btnAceptar);
             Controls.Add(btnVolver);
-            Controls.Add(txtIdUsuario);
+            Controls.Add(txtMail);
             Controls.Add(label6);
-            Controls.Add(txtStock);
+            Controls.Add(txtContrasenia);
             Controls.Add(label5);
-            Controls.Add(txtPrecioVenta);
+            Controls.Add(txtNombreUsuario);
             Controls.Add(label4);
-            Controls.Add(txtCosto);
+            Controls.Add(txtApellido);
             Controls.Add(label3);
-            Controls.Add(txtDescripcion);
+            Controls.Add(txtNombre);
             Controls.Add(label2);
             Controls.Add(txtId);
             Controls.Add(label1);
             Name = "FormUsuario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormUsuario";
+            Load += FormUsuario_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -212,15 +215,15 @@
 
         private Button btnAceptar;
         private Button btnVolver;
-        private TextBox txtIdUsuario;
+        private TextBox txtMail;
         private Label label6;
-        private TextBox txtStock;
+        private TextBox txtContrasenia;
         private Label label5;
-        private TextBox txtPrecioVenta;
+        private TextBox txtNombreUsuario;
         private Label label4;
-        private TextBox txtCosto;
+        private TextBox txtApellido;
         private Label label3;
-        private TextBox txtDescripcion;
+        private TextBox txtNombre;
         private Label label2;
         private TextBox txtId;
         private Label label1;

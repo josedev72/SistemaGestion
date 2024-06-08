@@ -30,11 +30,11 @@
         {
             btnAceptar = new Button();
             btnVolver = new Button();
-            txtPrecioVenta = new TextBox();
+            txtIdVenta = new TextBox();
             label4 = new Label();
-            txtCosto = new TextBox();
+            txtStock = new TextBox();
             label3 = new Label();
-            txtDescripcion = new TextBox();
+            txtIdProducto = new TextBox();
             label2 = new Label();
             txtId = new TextBox();
             label1 = new Label();
@@ -50,6 +50,7 @@
             btnAceptar.TabIndex = 5;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
+            btnAceptar.Click += btnAceptar_Click;
             // 
             // btnVolver
             // 
@@ -63,14 +64,14 @@
             btnVolver.UseVisualStyleBackColor = true;
             btnVolver.Click += btnVolver_Click;
             // 
-            // txtPrecioVenta
+            // txtIdVenta
             // 
-            txtPrecioVenta.BorderStyle = BorderStyle.FixedSingle;
-            txtPrecioVenta.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtPrecioVenta.Location = new Point(121, 117);
-            txtPrecioVenta.Name = "txtPrecioVenta";
-            txtPrecioVenta.Size = new Size(108, 27);
-            txtPrecioVenta.TabIndex = 3;
+            txtIdVenta.BorderStyle = BorderStyle.FixedSingle;
+            txtIdVenta.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIdVenta.Location = new Point(121, 117);
+            txtIdVenta.Name = "txtIdVenta";
+            txtIdVenta.Size = new Size(108, 27);
+            txtIdVenta.TabIndex = 3;
             // 
             // label4
             // 
@@ -82,14 +83,14 @@
             label4.TabIndex = 10;
             label4.Text = "Id. Venta";
             // 
-            // txtCosto
+            // txtStock
             // 
-            txtCosto.BorderStyle = BorderStyle.FixedSingle;
-            txtCosto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtCosto.Location = new Point(121, 84);
-            txtCosto.Name = "txtCosto";
-            txtCosto.Size = new Size(108, 27);
-            txtCosto.TabIndex = 2;
+            txtStock.BorderStyle = BorderStyle.FixedSingle;
+            txtStock.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtStock.Location = new Point(121, 84);
+            txtStock.Name = "txtStock";
+            txtStock.Size = new Size(108, 27);
+            txtStock.TabIndex = 2;
             // 
             // label3
             // 
@@ -101,14 +102,14 @@
             label3.TabIndex = 11;
             label3.Text = "Stock";
             // 
-            // txtDescripcion
+            // txtIdProducto
             // 
-            txtDescripcion.BorderStyle = BorderStyle.FixedSingle;
-            txtDescripcion.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            txtDescripcion.Location = new Point(121, 51);
-            txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(167, 27);
-            txtDescripcion.TabIndex = 1;
+            txtIdProducto.BorderStyle = BorderStyle.FixedSingle;
+            txtIdProducto.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            txtIdProducto.Location = new Point(121, 51);
+            txtIdProducto.Name = "txtIdProducto";
+            txtIdProducto.Size = new Size(167, 27);
+            txtIdProducto.TabIndex = 1;
             // 
             // label2
             // 
@@ -147,17 +148,18 @@
             ClientSize = new Size(404, 230);
             Controls.Add(btnAceptar);
             Controls.Add(btnVolver);
-            Controls.Add(txtPrecioVenta);
+            Controls.Add(txtIdVenta);
             Controls.Add(label4);
-            Controls.Add(txtCosto);
+            Controls.Add(txtStock);
             Controls.Add(label3);
-            Controls.Add(txtDescripcion);
+            Controls.Add(txtIdProducto);
             Controls.Add(label2);
             Controls.Add(txtId);
             Controls.Add(label1);
             Name = "FormProductoVendido";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormProductoVendido";
+            Load += FormProductoVendido_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -166,11 +168,11 @@
 
         private Button btnAceptar;
         private Button btnVolver;
-        private TextBox txtPrecioVenta;
+        private TextBox txtIdVenta;
         private Label label4;
-        private TextBox txtCosto;
+        private TextBox txtStock;
         private Label label3;
-        private TextBox txtDescripcion;
+        private TextBox txtIdProducto;
         private Label label2;
         private TextBox txtId;
         private Label label1;
