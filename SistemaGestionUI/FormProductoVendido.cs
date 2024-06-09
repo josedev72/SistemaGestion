@@ -1,8 +1,6 @@
-﻿using SistemaGestionBussiness;
-using SistemaGestionData;
+﻿using SistemaGestionData;
+using SistemaGestionBussiness;
 
-//using SistemaGestionData;
-using SistemaGestionEntities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SistemaGestionEntities;
 
 namespace SistemaGestionUI
 {

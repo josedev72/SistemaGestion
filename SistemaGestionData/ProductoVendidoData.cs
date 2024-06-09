@@ -10,7 +10,7 @@ namespace SistemaGestionData
 {
     public class ProductoVendidoData
     {
-        private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
+        private static string _connectionString = CadenaCnx.ObtenerCadena();
 
         //Obtener ProductoVendido x id
         public static ProductoVendido ObtenerProductoVendido(int id)

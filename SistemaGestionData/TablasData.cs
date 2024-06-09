@@ -1,11 +1,11 @@
-﻿using SistemaGestionEntities;
+﻿//using SistemaGestionEntities;
 using System.Data.SqlClient;
 
 namespace SistemaGestionData
 {
     public class TablasData
     {
-        private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
+        private static string _connectionString = CadenaCnx.ObtenerCadena();
 
         // Obtener tablas de mi bbdd
         public static List<string> GetTablas()

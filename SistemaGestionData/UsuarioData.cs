@@ -10,7 +10,7 @@ namespace SistemaGestionData
 {
     public class UsuarioData
     {
-        private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
+        private static string _connectionString = CadenaCnx.ObtenerCadena();
 
         //ObtenerUsuario
         public static Usuario ObtenerUsuario(int id)

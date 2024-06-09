@@ -205,7 +205,7 @@
             Controls.Add(label1);
             Name = "FormUsuario";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormUsuario";
+            Text = "Usuario";
             Load += FormUsuario_Load;
             ResumeLayout(false);
             PerformLayout();

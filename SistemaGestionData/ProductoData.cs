@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaGestionEntities;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace SistemaGestionData
 {
     public class ProductoData
     {
-        private static string _connectionString = @"Server=JOSE-NOTEBOOK-D\SQLEXPRESS;Database=SistemaGestion;Trusted_Connection=True;";
+        private static string _connectionString = CadenaCnx.ObtenerCadena();
 
         //ObtenerProducto x id
         public static Producto ObtenerProducto(int id)

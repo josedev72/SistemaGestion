@@ -1,5 +1,4 @@
 using SistemaGestionBussiness;
-using SistemaGestionData;
 using System.Data.Common;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -114,6 +113,7 @@ namespace SistemaGestionUI
 
 
                 default:
+                    Console.WriteLine("Tabla no encontrada", "Advertencia . . .", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
 
@@ -154,6 +154,7 @@ namespace SistemaGestionUI
                     break;
 
                 default:
+                    Console.WriteLine("Tabla no encontrada", "Advertencia . . .", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
         }
@@ -197,7 +198,9 @@ namespace SistemaGestionUI
                 case "Venta":
                     cargoVentas();
                     break;
+
                 default:
+                    Console.WriteLine("Tabla no encontrada", "Advertencia . . .", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
         }
@@ -244,7 +247,7 @@ namespace SistemaGestionUI
                     break;
 
                 default:
-                    Console.WriteLine("Tabla no encontrada");
+                    Console.WriteLine("Tabla no encontrada", "Advertencia . . .", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
         }
@@ -280,11 +283,6 @@ namespace SistemaGestionUI
                         break;
                 }
             }
-        }
-
-        private void dgvDatos_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void dgvDatos_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -1,6 +1,7 @@
 ﻿using SistemaGestionBussiness;
 using SistemaGestionData;
 using SistemaGestionEntities;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,6 @@ namespace SistemaGestionUI
             InitializeComponent();
             Id = id;
         }
-
 
         private void btnVolver_Click(object sender, EventArgs e)
         {

@@ -1,5 +1,6 @@
-﻿using SistemaGestionBussiness;
-using SistemaGestionData;
+﻿using SistemaGestionData;
+using SistemaGestionBussiness;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,11 +15,11 @@ namespace SistemaGestionUI
 {
     public partial class FormProducto : Form
     {
-        int Id;
+        private int Id;
         public FormProducto(int id)
         {
-            this.Id = id;
             InitializeComponent();
+            Id = id;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -26,43 +27,10 @@ namespace SistemaGestionUI
             this.Close();
         }
 
-        private void FormProducto_Load(object sender, EventArgs e)
-        {
-            Limpiar();
-            CargarProducto();
-            
-        }
-
-        private void CargarProducto()
-        {
-            if (this.Id == 0)
-            {
-                txtId.Text = this.Id.ToString();
-                btnAceptar.Text = "Guardar";
-            }
-            else 
-            {
-                btnAceptar.Text = "Modificar";
-                //Obtener registro
-                Producto p = ProductoBussiness.ObtenerProducto(this.Id);
-                txtId.Text = p.Id.ToString();
-                txtDescripcion.Text = p.Descripcion;
-                txtCosto.Text =p.Costo.ToString();
-                txtPrecioVenta.Text = p.PrecioVenta.ToString();
-                txtStock.Text = p.Stock.ToString();
-                txtIdUsuario.Text = p.IdUsuario.ToString();
-            }
-        }
-
-        private void Limpiar()
-        {
-            txtId.Text = txtDescripcion.Text = txtCosto.Text = txtPrecioVenta.Text =
-                txtStock.Text = txtIdUsuario.Text = string.Empty;
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             Producto p = new Producto();
+
             p.Id = this.Id;
             p.Descripcion = txtDescripcion.Text.Trim();
             p.Costo = Convert.ToDecimal(txtCosto.Text.Trim());
@@ -81,6 +49,41 @@ namespace SistemaGestionUI
             }
 
             this.Close();
+
+        }
+
+        private void FormProducto2_Load(object sender, EventArgs e)
+        {
+            Limpiar();
+            CargarProducto();
+        }
+
+        private void CargarProducto()
+        {
+            if (this.Id == 0)
+            {
+                txtId.Text = this.Id.ToString();
+                btnAceptar.Text = "Guardar";
+            }
+            else
+            {
+                btnAceptar.Text = "Modificar";
+                //Obtener registro
+
+                Producto p = ProductoBussiness.ObtenerProducto(this.Id);
+                txtId.Text = p.Id.ToString();
+                txtDescripcion.Text = p.Descripcion;
+                txtCosto.Text = p.Costo.ToString();
+                txtPrecioVenta.Text = p.PrecioVenta.ToString();
+                txtStock.Text = p.Stock.ToString();
+                txtIdUsuario.Text = p.IdUsuario.ToString();
+            }
+        }
+
+        private void Limpiar()
+        {
+            txtId.Text = txtDescripcion.Text = txtCosto.Text = txtPrecioVenta.Text =
+                txtStock.Text = txtIdUsuario.Text = string.Empty;
         }
     }
 }

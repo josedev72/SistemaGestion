@@ -1,7 +1,6 @@
 ﻿using SistemaGestionBussiness;
 using SistemaGestionData;
 
-//using SistemaGestionData;
 using SistemaGestionEntities;
 using System;
 using System.Collections.Generic;
