@@ -9,7 +9,7 @@ namespace SistemaGestionData
     public class Producto
     {
         public int Id { get; set; }
-        public string Descripcion { get; set; } = string.Empty;  // Valor predeterminado
+        public string Descripcion { get; set; } = "Producto no encontrado";  // Valor predeterminado
         public decimal Costo { get; set; } = 0;
         public decimal PrecioVenta { get; set; } = 0;
         public int Stock { get; set; } = 0;
