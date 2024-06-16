@@ -28,6 +28,21 @@ namespace SistemaGestionWebApi.Controllers
             ProductoBussiness.EliminarProductoId(id);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProductoById(int id)
+        {
+            try
+            {
+                ProductoBussiness.EliminarProductoId(id);
+                return NoContent(); // Retornar 204 No Content
+            }
+            catch (Exception ex)
+            {
+                // Aquí puedes registrar el error o devolver una respuesta de error más detallada
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error al eliminar el producto");
+            }
+        }
+
         [HttpPost(Name = "CreateProducto")]
         public void CreateProducto([FromBody] Producto producto)
         {
@@ -39,6 +54,22 @@ namespace SistemaGestionWebApi.Controllers
         {
             ProductoBussiness.ModificarProducto(producto);
         }
+
+        //[HttpPut("{id}")]
+        //public IActionResult UpdateProductoById(int id)
+        //{
+        //    try
+        //    {
+        //        Producto productoEdit = ProductoBussiness.ObtenerProducto(id);
+        //        ProductoBussiness.ModificarProducto(id);
+        //        return NoContent(); // Retornar 204 No Content
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        // Aquí puedes registrar el error o devolver una respuesta de error más detallada
+        //        return StatusCode(StatusCodes.Status500InternalServerError, "Error al eliminar el producto");
+        //    }
+        //}
 
 
 

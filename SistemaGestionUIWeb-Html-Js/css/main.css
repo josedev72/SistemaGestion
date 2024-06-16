@@ -1,0 +1,38 @@
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto 1fr; /* Agrega una fila para el título */
+    grid-gap: 10px;
+  }
+  
+  .modal-content h2 {
+    grid-column: 1 / 3; /* Hace que el título ocupe todo el ancho */
+    text-align: center;
+  }
+  
+  .modal-content .form-group {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+  
+  .modal-content label {
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+  }
+  
+  .modal-content input,
+  .modal-content textarea {
+    width: 100%;
+  }
+
+  /* Ajusta el z-index de la tabla o del contenedor principal */
+.table-container {
+    z-index: 0;
+  }
