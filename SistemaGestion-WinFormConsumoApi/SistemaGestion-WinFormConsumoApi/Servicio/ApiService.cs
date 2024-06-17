@@ -13,7 +13,6 @@ namespace SistemaGestion_WinFormConsumoApi.Servicio
     public class ApiService
     {
         private static readonly HttpClient _cliente;
-        //private string _url= ConfigurationManager.AppSettings["ApiBaseUrl"];
 
         static ApiService()
         {
