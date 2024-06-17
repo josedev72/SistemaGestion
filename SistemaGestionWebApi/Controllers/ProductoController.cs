@@ -55,6 +55,21 @@ namespace SistemaGestionWebApi.Controllers
             ProductoBussiness.ModificarProducto(producto);
         }
 
+        [HttpPut("{id}/{descripcion}/{costo}/{precioVenta}/{idUsuario}", Name = "UpdateProductoById")]
+        public void UpdateProductoById(int id, string descripcion, decimal costo, decimal precioVenta, int idUsuario)
+        {
+            var producto = new Producto
+            {
+                Id = id,
+                Descripcion = descripcion,
+                Costo = costo,
+                PrecioVenta = precioVenta, 
+                IdUsuario = idUsuario
+            };
+
+            ProductoBussiness.ModificarProducto(producto);
+        }
+
         //[HttpPut("{id}")]
         //public IActionResult UpdateProductoById(int id)
         //{

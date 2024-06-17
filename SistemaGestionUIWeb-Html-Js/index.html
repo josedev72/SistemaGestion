@@ -9,46 +9,7 @@
     <!-- Referencia al mi CSS -->
     <link rel="stylesheet" href="css/main.css"> 
 
-  <style>
-    /* Estilos para la barra de navegación */
-    nav {
-      background-color: #333;
-      color: #fff;
-      padding: 10px;
-    }
-
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-    }
-
-    nav li {
-      margin-right: 20px;
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-    }
-
-    /* Estilos para la tabla */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      padding: 8px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-  </style>
+ 
 </head>
 <body>
   <nav>
@@ -92,6 +53,10 @@
                     <label for="precio-venta">Precio Venta:</label>
                     <input type="number" id="precio-venta" name="precio-venta">
                 </div>
+                <div>
+                    <label for="id-usuario">Id Usuario:</label>
+                    <input type="number" id="id-usuario" name="id-usuario">
+                </div>                                
                 <br>
                 <div>
                     <button type="button" id="cancelButton">Regresar</button>
@@ -100,6 +65,8 @@
             </form>
         </div>
     </div>
+
+    
 
   <script src="js/script.js"></script>
 </body>
