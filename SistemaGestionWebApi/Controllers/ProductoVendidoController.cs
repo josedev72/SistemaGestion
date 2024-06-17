@@ -29,6 +29,21 @@ namespace SistemaGestionWebApi.Controllers
             ProductoVendidoBussiness.EliminarProductoVendidoId(id);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProductoVendido(int id)
+        {
+            try
+            {
+                ProductoVendidoBussiness.EliminarProductoVendidoId(id);
+                return NoContent(); // Retornar 204 No Content
+            }
+            catch (Exception ex)
+            {
+                // Aquí puedes registrar el error o devolver una respuesta de error más detallada
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error al eliminar el Producto Vendido");
+            }
+        }
+
         [HttpPost(Name = "CreateProductoVendido")]
         public void CreateProductoVendido([FromBody] ProductoVendido productoVendido)
         {

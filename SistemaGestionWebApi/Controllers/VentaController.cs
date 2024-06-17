@@ -28,6 +28,21 @@ namespace SistemaGestionWebApi.Controllers
             VentaBussiness.EliminarVentaId(id);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteVenta(int id)
+        {
+            try
+            {
+                VentaBussiness.EliminarVentaId(id);
+                return NoContent(); // Retornar 204 No Content
+            }
+            catch (Exception ex)
+            {
+                // Aquí puedes registrar el error o devolver una respuesta de error más detallada
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error al eliminar la Venta");
+            }
+        }
+
         [HttpPost(Name = "CreateVenta")]
         public void CreateVenta([FromBody] Venta venta)
         {

@@ -28,6 +28,21 @@ namespace SistemaGestionWebApi.Controllers
             UsuarioBussiness.EliminarUsuarioId(id);
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUsuario(int id)
+        {
+            try
+            {
+                UsuarioBussiness.EliminarUsuarioId(id);
+                return NoContent(); // Retornar 204 No Content
+            }
+            catch (Exception ex)
+            {
+                // Aquí puedes registrar el error o devolver una respuesta de error más detallada
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error al eliminar el Usuario");
+            }
+        }
+
         [HttpPost(Name = "CreateUsuario")]
         public void CreateUsuario([FromBody] Usuario usuario)
         {
