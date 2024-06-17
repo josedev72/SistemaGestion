@@ -1,22 +1,31 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
+using Newtonsoft.Json;
+
 namespace SistemaGestion_WinFormConsumoApi.Servicio
 {
     public class ApiService
     {
-        private static readonly HttpClient _cliente = new HttpClient();
+        private static readonly HttpClient _cliente;
+        //private string _url= ConfigurationManager.AppSettings["ApiBaseUrl"];
 
         static ApiService()
         {
-            _cliente.BaseAddress = new Uri("https://localhost:7214/");
-            _cliente.DefaultRequestHeaders.Accept.Clear();
-            _cliente.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+            _cliente = new HttpClient();
+
+            string _url = ConfigurationManager.AppSettings["ApiBaseUrl"];
+
+            if (string.IsNullOrEmpty(_url))
+            {
+                throw new Exception("La URL de la API no está funcionando.");
+            }
+            _cliente.BaseAddress = new Uri(_url);
         }
 
         public async Task<string> GetDataAsync(string endpoint)
