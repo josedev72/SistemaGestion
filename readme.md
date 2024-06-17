@@ -9,3 +9,10 @@ Funcionamiento:
 	2- Seleccionar del combo la tabla y luego Nuevo o Eliminar para su correspondiente Acción.
 
 	3- En forms correspondientes a cada tabla se pueden modificar los datos o desde el boton "Volver" cancela la edición.
+
+---------------------------
+Trabajo Práctico de C# - Desafío 04 - SistemaGestion-WinFormConsumoApi
+
+Nota: Se agregó al TP Anterior un proyecto Winform que consume la Api, para correrlo, 
+	  primero debe estar funcionando el proyecto SistemaGestionWebApi
+

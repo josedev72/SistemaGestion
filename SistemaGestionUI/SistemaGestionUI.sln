@@ -15,6 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaGestionWebApi", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SistemaGestion-WinFormConsumoApi", "..\SistemaGestion-WinFormConsumoApi\SistemaGestion-WinFormConsumoApi\SistemaGestion-WinFormConsumoApi.csproj", "{5E13DFDA-6C10-4D53-B99F-0DE39F84D103}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{5B7082E8-47AC-4161-8B10-3F39F1440A74}"
+	ProjectSection(SolutionItems) = preProject
+		..\readme.md = ..\readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
