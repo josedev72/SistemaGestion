@@ -17,3 +17,5 @@ Nota: Se agregó al TP Anterior un proyecto Winform que consume la Api, para cor
 	  primero debe estar funcionando el proyecto SistemaGestionWebApi.
 	  Se puede cambiar la url de la Api en en App.config.
 
+	  Se agregó Loguin, usuario válido = "jose", pass = "123".
+
