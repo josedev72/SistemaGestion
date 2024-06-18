@@ -19,3 +19,8 @@ Nota: Se agregó al TP Anterior un proyecto Winform que consume la Api, para cor
 
 	  Se agregó Loguin, usuario válido = "jose", pass = "123".
 
+	  Tener en cuenta que son varios proyectos juntos:
+			* SistemaGestionUI (App WinForm Ado.Net), aquí esta la solucion gral. del proyecto completo (SistemaGestionUI.sln) 
+			* SistemaGestionWebApi (Api)
+			* SistemaGestion-WinFormConsumoApi (App WinForm que consume la Api)
+
