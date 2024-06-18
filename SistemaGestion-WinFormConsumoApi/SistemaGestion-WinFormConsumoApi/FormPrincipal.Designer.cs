@@ -35,6 +35,7 @@
             btnNuevo = new Button();
             btnBorrar = new Button();
             dgvDatos = new DataGridView();
+            lblUsuario = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvDatos).BeginInit();
             SuspendLayout();
             // 
@@ -109,11 +110,23 @@
             dgvDatos.CellClick += dgvDatos_CellClick;
             dgvDatos.CellDoubleClick += dgvDatos_CellDoubleClick;
             // 
+            // lblUsuario
+            // 
+            lblUsuario.BorderStyle = BorderStyle.FixedSingle;
+            lblUsuario.Dock = DockStyle.Bottom;
+            lblUsuario.FlatStyle = FlatStyle.Flat;
+            lblUsuario.Location = new Point(0, 352);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(800, 23);
+            lblUsuario.TabIndex = 11;
+            lblUsuario.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 333);
+            ClientSize = new Size(800, 375);
+            Controls.Add(lblUsuario);
             Controls.Add(dgvDatos);
             Controls.Add(btnBorrar);
             Controls.Add(btnNuevo);
@@ -122,7 +135,7 @@
             Name = "FormPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SistemaGestion - Consumo de Api";
-            //Load += this.FormPrincipal_Load_1;
+            Load += FormPrincipal_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDatos).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -135,5 +148,6 @@
         private Button btnNuevo;
         private Button btnBorrar;
         private DataGridView dgvDatos;
+        private Label lblUsuario;
     }
 }

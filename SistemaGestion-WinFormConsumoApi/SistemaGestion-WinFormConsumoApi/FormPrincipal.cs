@@ -21,11 +21,6 @@ namespace SistemaGestion_WinFormConsumoApi
             CargarComboBox();
         }
 
-        private async void FormPrincipal_Load(object sender, EventArgs e)
-        {
-             
-        }
-
         private async Task CargarComboBox()
         {
             try
@@ -227,9 +222,9 @@ namespace SistemaGestion_WinFormConsumoApi
             {
                 switch (this._tabla)
                 {
-                    case "Producto":                     
-                    case "ProductoVendido":                        
-                    case "Usuario":                        
+                    case "Producto":
+                    case "ProductoVendido":
+                    case "Usuario":
                     case "Venta":
                         await apiService.DeleteDataAsync($"api/{this._tabla}/{this._id}");
                         MessageBox.Show("Borrado exitoso", "Advertencia . . .", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -242,6 +237,36 @@ namespace SistemaGestion_WinFormConsumoApi
 
                 CargarDGV();
             }
+        }
+
+        //private void btnLoguearse_Click(object sender, EventArgs e)
+        //{
+        //    Loguearse();
+        //}
+
+        private string _retornoLoguin;
+        private void Loguearse()
+        {
+            // Instanciar form secundario
+            FormLoguin formLoguin = new FormLoguin();
+
+            // Mostrar el form secundario como modal
+            if (formLoguin.ShowDialog() == DialogResult.OK)
+            {
+                // Obtener el valor del formu secundario
+                _retornoLoguin = formLoguin.rtaUsuario;                
+                lblUsuario.Text = "Usuario actual: " + _retornoLoguin;
+                //MessageBox.Show($"Valor retornado de Loguin: {_retornoLoguin}");
+            }
+            else
+            {
+                this.Close();
+            }
+        }
+
+        private void FormPrincipal_Load(object sender, EventArgs e)
+        {
+            Loguearse();
         }
     }
 }
