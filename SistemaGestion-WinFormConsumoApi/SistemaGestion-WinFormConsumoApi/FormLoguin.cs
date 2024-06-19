@@ -88,11 +88,13 @@ namespace SistemaGestion_WinFormConsumoApi
                 cmbUsuarios.Focus();
                 return;
             }
+
             foreach (RegUsuario r in listaUsuarios)
             {
                 if (txtContrasenia.Text == r.Contrasenia && cmbUsuarios.Text == r.NombreUsuario)
                 {
                     bandera = true;
+                    break;
                 }
             }
 
